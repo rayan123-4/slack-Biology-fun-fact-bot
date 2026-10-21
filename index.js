@@ -28,12 +28,12 @@ app.command("/biology_fun_fact_bot-help",async({ack,respond})=>{
 /biology_fun_fact_bot-help - Show this menu
 /biology_fun_fact_bot-animalfact - Get a random animal fun fact
 /biology_fun_fact_bot-animalimg - Get a random animal image
-/biology_fun_fact_bot-anatomyfact - Get a random anatomy fun fact`
+/biology_fun_fact_bot-anatomy - Get a random anatomy fun fact`
   });
 });
 
 // Random anatomy fun fact command
-app.command("/biology_fun_fact_bot-anatomyfact",async({ack,respond})=>{
+app.command("/biology_fun_fact_bot-anatomy",async({ack,respond})=>{
   await ack();
 
   const anatomyFacts = [
