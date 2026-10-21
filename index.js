@@ -34,7 +34,7 @@ const animalsList = ["panda", "fox", "bird", "koala", "kangaroo", "raccoon", "wh
 const randomSelection = animalsList [Math. floor(Math.random() * animalsList.length)];
 
 try {
-  const response = await axios.get(`https://some-random-api.com{randomSelection`);
+  const response = await axios.get(`https://some-random-api.com/animal/${randomSelection}`);
   await respond({
     text:
 `*Animal Biology Fact (${randomSelection}):* \n\n> ${response.data.fact}`
