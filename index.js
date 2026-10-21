@@ -3,12 +3,14 @@ require("dotenv").config();
 const { App } = require("@slack/bolt");
 const axios = require("axios");
 
+// Slack app token.
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   appToken: process.env.SLACK_APP_TOKEN,
   socketMode: true
 });
 
+// Ping command.
 app.command("/biology_fun_fact_bot-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
   await ack();
@@ -16,6 +18,7 @@ app.command("/biology_fun_fact_bot-ping", async ({ command, ack, respond }) => {
   await respond({ text: `Hello! Pong! \nLatency: ${latency}ms` });
 });
 
+// Help command.
 app.command("/biology_fun_fact_bot-help",async({ack,respond})=>{
   await ack();
   await respond({
@@ -23,15 +26,40 @@ app.command("/biology_fun_fact_bot-help",async({ack,respond})=>{
 `Available Commands:
 /biology_fun_fact_bot-ping - Check bot latency
 /biology_fun_fact_bot-help - Show this menu
-/biology_fun_fact_bot-animalfact - Get a animal fun fact`
+/biology_fun_fact_bot-animalfact - Get a random animal fun fact
+/biology_fun_fact_bot-animalImg - Get a random animal image`
   });
 });
 
+// Random animal image command.
+app.command("/biology_fun_fact_bot-animalImg",async({ack,respond})=>{
+  await ack();
+
+  const animalsList = ["fox", "cat", "birb", "panda", "red_panda", "racoon", "kangaroo", "whale", "dog", "bird", "koala"];
+  const randomSelection = animalsList[Math.floor(Math.random() * animalsList.length)];
+
+  (async () => {
+try {
+  const response = await axios.get(`https://some-random-api.com/img/${randomSelection}`);
+  const imageUrl = response.data.link;
+  await respond({
+    blocks: [{type:"header", text: {type:"plain_text", text: `Random ${randomSelection}`}},
+    {type: "image", image_url: imageUrl, alt_text: `Random ${randomSelection}`}]
+});
+
+
+} catch (err) {
+        await respond({text: "Failed to fetch a random animal image."});
+    }
+  })();
+});
+
+// Random animal fun fact command.
 app.command("/biology_fun_fact_bot-animalfact",async({ack,respond})=>{
   await ack();
 
-const animalsList = ["panda", "fox", "bird", "koala", "kangaroo", "raccoon", "whale"];
-const randomSelection = animalsList [Math. floor(Math.random() * animalsList.length)];
+  const animalsList = ["panda", "fox", "bird", "koala", "kangaroo", "raccoon", "whale"];
+  const randomSelection = animalsList [Math. floor(Math.random() * animalsList.length)];
 
 (async () => {
 try {
@@ -43,7 +71,7 @@ try {
 
 
 } catch (err) {
-        await respond({text: "Failed to fetch a biology fact."});
+        await respond({text: "Failed to fetch a random animal fact."});
     }
   })();
 });
