@@ -8,21 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rayan123-4/slack-Biology-fun-fact-bot.git"
+    "url": "git+https://github.com"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rayan123-4/slack-Biology-fun-fact-bot/issues"
+    "url": "https://github.com"
   },
-  "homepage": "https://github.com/rayan123-4/slack-Biology-fun-fact-bot#readme",
+  "homepage": "https://github.com",
   "dependencies": {
-    "@slack/bolt": "^5.1.0",
-    "dotenv": "^18.0.8",
-    "undici": "6.19.2"
-  },
-  "overrides": {
-    "undici": "6.19.2"
+    "@slack/bolt": "^3.21.0",
+    "dotenv": "^18.0.8"
   }
 }
