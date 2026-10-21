@@ -1,0 +1,24 @@
+{
+  "name": "slack-biology-fun-fact-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayan123-4/slack-Biology-fun-fact-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayan123-4/slack-Biology-fun-fact-bot/issues"
+  },
+  "homepage": "https://github.com/rayan123-4/slack-Biology-fun-fact-bot#readme",
+  "dependencies": {
+    "@slack/bolt": "^5.1.0",
+    "dotenv": "^18.0.8"
+  }
+}
