@@ -40,7 +40,7 @@ app.command("/biology_fun_fact_bot-animalImg",async({ack,respond})=>{
 
   (async () => {
 try {
-  const response = await axios.get(`https://some-random-api.com/img/${randomSelection}`);
+  const response = await axios.get(`https://api.some-random-api.com/img/${randomSelection}`);
   const imageUrl = response.data.link;
   await respond({
     blocks: [{type:"header", text: {type:"plain_text", text: `Random ${randomSelection}`}},
@@ -63,7 +63,7 @@ app.command("/biology_fun_fact_bot-animalfact",async({ack,respond})=>{
 
 (async () => {
 try {
-  const response = await axios.get(`https://some-random-api.com/animal/${randomSelection}`);
+  const response = await axios.get(`https://api.some-random-api.com/animal/${randomSelection}`);
   await respond({
     text:
 `*Animal Biology Fact (${randomSelection}):* \n\n> ${response.data.fact}`
