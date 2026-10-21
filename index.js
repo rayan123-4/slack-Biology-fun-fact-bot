@@ -27,12 +27,12 @@ app.command("/biology_fun_fact_bot-help",async({ack,respond})=>{
 /biology_fun_fact_bot-ping - Check bot latency
 /biology_fun_fact_bot-help - Show this menu
 /biology_fun_fact_bot-animalfact - Get a random animal fun fact
-/biology_fun_fact_bot-animalImg - Get a random animal image`
+/biology_fun_fact_bot-animalimg - Get a random animal image`
   });
 });
 
 // Random animal image command.
-app.command("/biology_fun_fact_bot-animalImg",async({ack,respond})=>{
+app.command("/biology_fun_fact_bot-animalimg",async({ack,respond})=>{
   await ack();
 
   const animalsList = ["fox", "cat", "birb", "panda", "red_panda", "racoon", "kangaroo", "whale", "dog", "bird", "koala"];
