@@ -33,6 +33,7 @@ app.command("/biology_fun_fact_bot-animalfact",async({ack,respond})=>{
 const animalsList = ["panda", "fox", "bird", "koala", "kangaroo", "raccoon", "whale"];
 const randomSelection = animalsList [Math. floor(Math.random() * animalsList.length)];
 
+(async () => {
 try {
   const response = await axios.get(`https://some-random-api.com/animal/${randomSelection}`);
   await respond({
@@ -44,6 +45,7 @@ try {
 } catch (err) {
         await respond({text: "Failed to fetch a biology fact."});
     }
+  })();
 });
 
 (async () => {
