@@ -40,6 +40,8 @@ try {
 `*Animal Biology Fact (${randomSelection}):* \n\n> ${response.data.fact}`
 });
 
+await respond({text: "Wait Please"});
+
 } catch (err) {
         await respond({text: "Failed to fetch a biology fact."});
     }
