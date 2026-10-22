@@ -66,7 +66,7 @@ try {
     blocks: [
       {
         type: "section",
-        text: { type: "mrkdwn", text: `Random ${randomSelection3}` }
+        text: { type: "mrkdwn", text: `Random Anatomy fact: ${randomSelection3}` }
       }
     ]
     });
@@ -110,7 +110,7 @@ try {
   const response = await axios.get(`https://api.some-random-api.com/animal/${randomSelection1}`);
   await respond({
     text:
-`*Animal Biology Fact (${randomSelection1}):* \n\n> ${response.data.fact}`
+`*Random Animal Biology Fact: (${randomSelection1}):* \n\n> ${response.data.fact}`
 });
 
 
