@@ -34,6 +34,7 @@ app.command("/biology_fun_fact_bot-help",async({ack,respond})=>{
 
 // Random anatomy fun fact command
 app.command("/biology_fun_fact_bot-anatomy",async({ack})=>{
+  await ack();
   const anatomyFacts = [
   "The human body consists of around 100 trillion cells.",
   "The average human produces 25,000 quarts of saliva or spit in a lifetime. That's enough saliva to fill 2 swimming pools.",
@@ -59,7 +60,7 @@ app.command("/biology_fun_fact_bot-anatomy",async({ack})=>{
 ];
 
   const randomSelection3 = anatomyFacts[Math.floor(Math.random() * anatomyFacts.length)];
-  await ack({
+  await respond({
     blocks: [
       {
         type: "section",
