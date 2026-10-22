@@ -33,7 +33,7 @@ app.command("/biology_fun_fact_bot-help",async({ack,respond})=>{
 });
 
 // Random anatomy fun fact command
-app.command("/biology_fun_fact_bot-anatomy",async({ack})=>{
+app.command("/biology_fun_fact_bot-anatomy",async({ack,respond})=>{
   await ack();
   const anatomyFacts = [
   "The human body consists of around 100 trillion cells.",
