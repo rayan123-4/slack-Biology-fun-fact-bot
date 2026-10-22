@@ -61,7 +61,6 @@ app.command("/biology_fun_fact_bot-anatomy",async({ack})=>{
 
   const randomSelection3 = anatomyFacts[Math.floor(Math.random() * anatomyFacts.length)];
 
-  (async () => {
 try {
   await respond({
     blocks: [
@@ -75,7 +74,6 @@ try {
         await respond({text: "Failed to fetch a random anatomy fact."});
     }
   });
-});
 
 // Random animal image command.
 app.command("/biology_fun_fact_bot-animalimg",async({ack,respond})=>{
