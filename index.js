@@ -65,8 +65,12 @@ try {
   await respond({
     blocks: [
       {
+        type: "header",
+        text: { type: "plain_text", text: `Random Anatomy fact:`},
+
         type: "section",
-        text: { type: "mrkdwn", text: `Random Anatomy fact: ${randomSelection3}` }
+        text: {type: "mrkdwn", text:
+          `{${randomSelection3}` }
       }
     ]
     });
